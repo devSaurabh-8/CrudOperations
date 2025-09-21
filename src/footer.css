@@ -1,0 +1,40 @@
+.footer {
+  background-color: #1f2937; /* Dark gray (same as header theme) */
+  color: #f3f4f6; /* Light text */
+  text-align: center;
+  padding: 10px 15px;   /* छोटा padding */
+  font-size: 14px;      /* Smaller font */
+}
+
+.footer p {
+  margin: 4px 0;
+  font-size: 13px;
+  color: #d1d5db; /* Light gray */
+}
+
+.footer-links {
+  margin-top: 5px;
+}
+
+.footer-links a {
+  color: #9ca3af; /* Muted gray */
+  margin: 0 8px;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-links a:hover {
+  color: #ffffff; /* White on hover */
+  text-decoration: underline;
+}
+
+/* 📱 Mobile responsive */
+@media (max-width: 600px) {
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 6px;
+  }
+}

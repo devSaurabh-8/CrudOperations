@@ -1,0 +1,139 @@
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 30px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  gap: 10px;
+}
+
+.menu button {
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #999;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.menu button:hover {
+  background-color: #f0f0f0;
+}
+
+body.dark .menu button:hover {
+  background-color: #2a2a2a;
+}
+
+.search {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #999;
+  width: 350px;
+  margin: 0 10px;
+}
+
+.theme-toggle {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.users-dropdown {
+  position: relative;
+}
+
+.users-dropdown span {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.users-dropdown ul {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: inherit;
+  list-style: none;
+  border: 1px solid #999;
+  padding: 10px;
+  margin: 0;
+  width: 180px;
+  max-height: 250px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.users-dropdown li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.users-dropdown input {
+  width: 100px;
+  padding: 4px;
+  font-size: 14px;
+}
+
+.users-dropdown button {
+  margin-left: 5px;
+  font-size: 12px;
+  padding: 3px 6px;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  background-color: #e0e0e0;
+}
+
+body.dark .users-dropdown button {
+  background-color: #333;
+  color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu, .users-dropdown, .search {
+    margin: 10px 0;
+    width: 100%;
+  }
+}
+.dropdown-toggle {
+  cursor: pointer;
+  user-select: none;
+}

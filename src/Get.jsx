@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./get.css";
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 function Get() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/users")
-      .then((res) => res.json())
+    fetch(`${API_BASE}/users`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Network response was not ok");
+        return res.json();
+      })
       .then((data) => setUsers(data))
       .catch((err) => console.error(err));
   }, []);

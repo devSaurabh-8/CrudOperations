@@ -1,13 +1,15 @@
 import "./delete.css";
 import { useEffect, useState } from "react";
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 function Delete() {
   const [users, setUsers] = useState([]);
 
   // Fetch users
   const fetchUsers = async () => {
     try {
-      const res = await fetch("http://localhost:3001/users");
+      const res = await fetch(`${API_BASE}/users`);
       const data = await res.json();
       setUsers(data);
     } catch (err) {
@@ -22,7 +24,7 @@ function Delete() {
   // Delete user
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3001/users/${id}`, {
+      const res = await fetch(`${API_BASE}/users/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {

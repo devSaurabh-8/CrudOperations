@@ -1,6 +1,8 @@
 import "./post.css";
 import { useState } from "react";
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 function Post() {
   const [id, setId] = useState("");
   const [name, setName] = useState("");
@@ -10,7 +12,7 @@ function Post() {
 
   const createNewUser = async () => {
     try {
-      const url = "http://localhost:3001/users";
+      const url = `${API_BASE}/users`;
       let response = await fetch(url, {
         method: "POST",
         headers: {

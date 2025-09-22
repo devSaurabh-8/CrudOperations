@@ -1,6 +1,8 @@
 import "./put.css";
 import { useEffect, useState } from "react";
 
+const API_BASE = import.meta.env.VITE_API_BASE;
+
 function Put() {
   const [users, setUsers] = useState([]);
   const [editingId, setEditingId] = useState(null);
@@ -9,7 +11,7 @@ function Put() {
   // Fetch all users
   const fetchUsers = async () => {
     try {
-      const res = await fetch("http://localhost:3001/users");
+      const res = await fetch(`${API_BASE}/users`);
       const data = await res.json();
       setUsers(data);
     } catch (err) {
@@ -30,7 +32,7 @@ function Put() {
   // Save update
   const saveUser = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3001/users/${id}`, {
+      const res = await fetch(`${API_BASE}/users/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

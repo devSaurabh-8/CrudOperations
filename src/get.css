@@ -1,65 +1,36 @@
 .get-container {
   max-width: 900px;
-  margin: 0px auto 30px;  /* header ke just 50px niche */
+  margin: 20px auto;
   padding: 20px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .title {
   text-align: center;
-  color: #1e293b;
-  font-size: 2rem;
-  font-weight: bold;
   margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
 }
 
 .user-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
 }
 
 .user-table th {
-  background: #2563eb; /* same as header blue */
+  background: #d32f2f;
   color: white;
   padding: 12px;
   text-align: left;
-  font-size: 1rem;
 }
 
 .user-table td {
   padding: 12px;
-  border-bottom: 1px solid #e2e8f0;
-  font-size: 0.95rem;
+  border-bottom: 1px solid #ddd;
 }
 
 .user-table tr:nth-child(even) {
-  background-color: #f8fafc;
-}
-
-.user-table tr:hover {
-  background-color: #e0f2fe;
-  transition: 0.3s;
-}
-
-.home-link {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.home-link a {
-  text-decoration: none;
-  color: #2563eb;
-  font-weight: bold;
-  padding: 8px 16px;
-  border: 2px solid #2563eb;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-.home-link a:hover {
-  background: #2563eb;
-  color: white;
+  background: #f9f9f9;
 }

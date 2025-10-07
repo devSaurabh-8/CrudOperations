@@ -1,27 +1,32 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
+import Home from "./Home";
 import Get from "./Get";
 import Post from "./Post";
 import Put from "./Put";
 import Delete from "./Delete";
-import Home from "./Home";
-import Footer from "./Footer";
+import "./App.css";
+import "./theme.css";   // 👈 yeh last hona chahiye
 
 function App() {
   return (
-    <div className="app-container">
-      <BrowserRouter>
+    <Router>
+      <div className="app-container">
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/get" element={<Get />} />
-          <Route path="/post" element={<Post />} />
-          <Route path="/put" element={<Put />} />
-          <Route path="/delete" element={<Delete />} />
-        </Routes>
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/get" element={<Get />} />
+            <Route path="/post" element={<Post />} />
+            <Route path="/put" element={<Put />} />
+            <Route path="/delete" element={<Delete />} />
+          </Routes>
+        </main>
         <Footer />
-      </BrowserRouter>
-    </div>
+      </div>
+    </Router>
   );
 }
+
 export default App;

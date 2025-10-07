@@ -1,0 +1,255 @@
+/* 🌞 Light Mode */
+body.light {
+  background-color: #f9fafb;
+  color: #1e293b;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🌙 Dark Mode */
+body.dark {
+  background-color: #111827;
+  color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+body.light .header {
+  background-color: #ffffff;
+  color: #111827;
+  border-bottom: 1px solid #ccc;
+}
+
+body.dark .header {
+  background-color: #1f2937;
+  color: #f9fafb;
+  border-bottom: 1px solid #444;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+body.light .footer {
+  background: #f3f4f6;
+  color: #111827;
+  border-top: 1px solid #ccc;
+}
+
+body.dark .footer {
+  background: #1f2937;
+  color: #f9fafb;
+  border-top: 1px solid #444;
+}
+
+/* =========================
+   CRUD Containers
+   ========================= */
+body.light .get-container,
+body.light .post-container,
+body.light .put-container,
+body.light .delete-container {
+  background: #ffffff;
+  color: #1e293b;
+  border: 1px solid #e5e7eb;
+}
+
+body.dark .get-container,
+body.dark .post-container,
+body.dark .put-container,
+body.dark .delete-container {
+  background: #1f2937;
+  color: #f9fafb;
+  border: 1px solid #444;
+}
+
+/* =========================
+   TABLES
+   ========================= */
+body.light .user-table th {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+body.dark .user-table th {
+  background: #374151;
+  color: #f9fafb;
+}
+
+body.light .user-table td {
+  color: #1e293b;
+}
+
+body.dark .user-table td {
+  color: #f3f4f6;
+}
+
+/* Light Mode Row Background */
+body.light .user-table tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+body.light .user-table tr:hover {
+  background-color: #e0f2fe;
+}
+
+/* Dark Mode Row Background */
+body.dark .user-table tr:nth-child(even) {
+  background-color: #1e293b;
+}
+
+body.dark .user-table tr:hover {
+  background-color: #374151;
+}
+
+/* =========================
+   PAGE TITLES
+   ========================= */
+body.light .title {
+  color: #1e293b;
+}
+
+body.dark .title {
+  color: #f9fafb;
+}
+
+/* =========================
+   BUTTONS (normal form buttons)
+   ========================= */
+button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  font-weight: 500;
+}
+
+body.light button {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+}
+
+body.light button:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+body.dark button {
+  background: #3b82f6;
+  color: #ffffff;
+  border: none;
+}
+
+body.dark button:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   HOME PAGE ACTION BUTTONS (.btn)
+   ========================= */
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Light Mode */
+body.light .btn {
+  color: #1e293b;
+  background-color: #ffffff;
+  border: 1px solid #2563eb;
+}
+
+body.light .btn:hover {
+  background-color: #f0f8ff;
+  color: #2563eb;
+  border-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Dark Mode */
+body.dark .btn {
+  color: #f9fafb;
+  background-color: #1f2937;
+  border: 1px solid #3b82f6;
+}
+
+body.dark .btn:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   FEATURES SECTION
+   ========================= */
+
+/* Light Mode */
+body.light .feature-card {
+  background: #fafafa;
+  color: #1e293b;
+  border: 1px solid #ddd;
+}
+
+/* Dark Mode */
+body.dark .feature-card {
+  background: #1f2937;
+  color: #f9fafb;
+  border: 1px solid #444;
+}
+
+body.dark .feature-card p {
+  color: #d1d5db; /* Thoda light grey for readability */
+}
+
+/* =========================
+   ABOUT SECTION
+   ========================= */
+.about {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Light Mode */
+body.light .about {
+  background: #ffffff;
+  color: #1e293b;
+  border: 1px solid #ddd;
+}
+
+/* Dark Mode */
+body.dark .about {
+  background: #1f2937;
+  color: #f3f4f6;
+  border: 1px solid #444;
+}
+
+.about h2 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.about p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}

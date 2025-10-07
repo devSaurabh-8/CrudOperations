@@ -1,77 +1,92 @@
+import React, { useState } from "react";
 import "./post.css";
-import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const API_BASE = import.meta.env.VITE_API_BASE;
 
 function Post() {
-  const [id, setId] = useState("");
-  const [name, setName] = useState("");
-  const [role, setRole] = useState("");
-  const [city, setCity] = useState("");
-  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({
+    id: "",
+    name: "",
+    role: "",
+    city: ""
+  });
 
-  const createNewUser = async () => {
+  // ✅ Input change handler
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // ✅ Async/Await Submit handler
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      const url = `${API_BASE}/users`;
-      let response = await fetch(url, {
+      const response = await fetch(`${API_BASE}/users`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json"
         },
-        body: JSON.stringify({ id, name, role, city }),
+        body: JSON.stringify(formData)
       });
-      if (response.ok) {
-        setMessage("✅ User added successfully!");
-        setId("");
-        setName("");
-        setRole("");
-        setCity("");
-      } else {
-        setMessage("❌ Failed to add user!");
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
       }
-    } catch (err) {
-      console.error(err);
-      setMessage("⚠ Error occurred!");
+
+      await response.json();
+      alert("✅ User Added Successfully");
+
+      // Reset form after submit
+      setFormData({ id: "", name: "", role: "", city: "" });
+    } catch (error) {
+      console.error("Failed to add user:", error);
+      alert("❌ Failed to add user. Please try again.");
     }
   };
 
   return (
     <div className="post-container">
-      <h1 className="title">➕ Add New User</h1>
-      <div className="form">
+      <h2 className="title">➕ Add New User</h2>
+      <form className="user-form" onSubmit={handleSubmit}>
         <input
           type="text"
+          name="id"
           placeholder="Enter Id"
-          value={id}
-          onChange={(event) => setId(event.target.value)}
+          value={formData.id}
+          onChange={handleChange}
+          required
         />
         <input
           type="text"
+          name="name"
           placeholder="Enter Name"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
+          value={formData.name}
+          onChange={handleChange}
+          required
         />
         <input
           type="text"
+          name="role"
           placeholder="Enter Role"
-          value={role}
-          onChange={(event) => setRole(event.target.value)}
+          value={formData.role}
+          onChange={handleChange}
+          required
         />
         <input
           type="text"
+          name="city"
           placeholder="Enter City"
-          value={city}
-          onChange={(event) => setCity(event.target.value)}
+          value={formData.city}
+          onChange={handleChange}
+          required
         />
-        <button id="btn" onClick={createNewUser}>
-          Submit
-        </button>
-      </div>
+        <button type="submit">Submit</button>
+      </form>
 
-      {message && <p className="message">{message}</p>}
-
+      {/* ✅ Back to Home */}
       <div className="home-link">
-        <a href="/">⬅ Back to Home</a>
+        <Link to="/">← Back to Home</Link>
       </div>
     </div>
   );

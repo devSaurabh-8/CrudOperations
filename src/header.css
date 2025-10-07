@@ -1,12 +1,3 @@
-body.light {
-  background-color: #ffffff;
-  color: #000000;
-}
-
-body.dark {
-  background-color: #121212;
-  color: #ffffff;
-}
 
 .header {
   display: flex;
@@ -21,6 +12,11 @@ body.dark {
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+/* === Add safe space below header === */
+.main-content {
+  margin-top: 40px;   /* adjust depending on header height */
 }
 
 .logo {
@@ -133,6 +129,7 @@ body.dark .users-dropdown button {
     width: 100%;
   }
 }
+
 .dropdown-toggle {
   cursor: pointer;
   user-select: none;

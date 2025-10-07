@@ -2,18 +2,21 @@ import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 
+const API_BASE = import.meta.env.VITE_API_BASE; // 👈 same as Get.jsx
+
 const Header = () => {
   const [theme, setTheme] = useState('light');
   const [search, setSearch] = useState('');
   const [users, setUsers] = useState([]);
   const [editingUserId, setEditingUserId] = useState(null);
   const [editedName, setEditedName] = useState('');
-  const [showDropdown, setShowDropdown] = useState(false); // Toggle dropdown
+  const [showDropdown, setShowDropdown] = useState(false);
 
   // GET users
   const fetchUsers = async () => {
     try {
-      const res = await fetch('http://localhost:3001/users');
+      const res = await fetch(`${API_BASE}/users`);
+      if (!res.ok) throw new Error("Failed to fetch users");
       const data = await res.json();
       setUsers(data);
     } catch (err) {
@@ -26,11 +29,13 @@ const Header = () => {
   }, []);
 
   // Theme toggle
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    document.body.className = newTheme;
-  };
+  // inside Header component
+const toggleTheme = () => {
+  const newTheme = theme === 'light' ? 'dark' : 'light';
+  setTheme(newTheme);
+  document.body.className = newTheme;  // ✅ sahi hai
+};
+
 
   // Toggle users dropdown
   const toggleDropdown = () => {
@@ -46,7 +51,7 @@ const Header = () => {
   // Save updated user
   const saveName = async (id) => {
     try {
-      await fetch(`http://localhost:3001/users/${id}`, {
+      await fetch(`${API_BASE}/users/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

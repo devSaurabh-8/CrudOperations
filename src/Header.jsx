@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 
-const API_BASE = import.meta.env.VITE_API_BASE; // 👈 same as Get.jsx
+const API_BASE = import.meta.env.VITE_API_BASE; 
 
 const Header = () => {
   const [theme, setTheme] = useState('light');

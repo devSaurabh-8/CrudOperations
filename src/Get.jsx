@@ -6,29 +6,27 @@ const API_BASE = import.meta.env.VITE_API_BASE;
 function Get() {
   const [users, setUsers] = useState([]);
 
-  // ✅ Ek reusable function banaya
   const fetchUsers = async () => {
     try {
       const response = await fetch(`${API_BASE}/users`, {
-        method: "GET", // HTTP method
+        method: "GET",
         headers: {
-          "Content-Type": "application/json", // server ko bol rahe hain ki JSON data chahiye
-          Accept: "application/json", // bata rahe hain ki hum JSON accept karenge
+          "Content-Type": "application/json",
+          Accept: "application/json", 
         },
       });
 
       if (!response.ok) {
-        throw new Error(`Error: ${response.status}`); // agar server 404, 500 de to
+        throw new Error(`Error: ${response.status}`); 
       }
 
-      const data = await response.json(); // response ko JSON mein parse kiya
-      setUsers(data); // state update
+      const data = await response.json(); 
+      setUsers(data);
     } catch (error) {
       console.error("Failed to fetch users:", error);
     }
   };
 
-  // ✅ useEffect ke andar sirf function call
   useEffect(() => {
     fetchUsers();
   }, []);

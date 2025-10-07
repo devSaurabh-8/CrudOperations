@@ -8,7 +8,7 @@ const API_BASE = import.meta.env.VITE_API_BASE;
 function Delete() {
   const [users, setUsers] = useState([]);
 
-  // ✅ Fetch users
+
   const fetchUsers = async () => {
     try {
       const response = await fetch(`${API_BASE}/users`, {
@@ -28,7 +28,7 @@ function Delete() {
     }
   };
 
-  // ✅ Delete handler
+  
   const handleDelete = async (id) => {
     try {
       const response = await fetch(`${API_BASE}/users/${id}`, {
@@ -37,14 +37,12 @@ function Delete() {
 
       if (!response.ok) throw new Error(`Delete failed: ${response.status}`);
 
-      // UI se turant remove
       setUsers((prevUsers) => prevUsers.filter((user) => user.id !== id));
     } catch (error) {
       console.error("Error deleting user:", error);
     }
   };
 
-  // ✅ Component mount pe load
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -101,8 +99,6 @@ function Delete() {
           </AnimatePresence>
         </tbody>
       </table>
-
-      {/* ✅ Back to Home */}
       <div className="home-link">
         <Link to="/">← Back to Home</Link>
       </div>

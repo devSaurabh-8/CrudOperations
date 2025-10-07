@@ -7,7 +7,7 @@ import Post from "./Post";
 import Put from "./Put";
 import Delete from "./Delete";
 import "./App.css";
-import "./theme.css";   // 👈 yeh last hona chahiye
+import "./theme.css";  
 
 function App() {
   return (

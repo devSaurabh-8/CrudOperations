@@ -1,15 +1,15 @@
 .footer {
-  background-color: #1f2937; /* Dark gray (same as header theme) */
-  color: #f3f4f6; /* Light text */
+  background-color: #1f2937; 
+  color: #f3f4f6;
   text-align: center;
-  padding: 10px 15px;   /* छोटा padding */
-  font-size: 14px;      /* Smaller font */
+  padding: 10px 15px;   
+  font-size: 14px;      
 }
 
 .footer p {
   margin: 4px 0;
   font-size: 13px;
-  color: #d1d5db; /* Light gray */
+  color: #d1d5db; 
 }
 
 .footer-links {
@@ -17,7 +17,7 @@
 }
 
 .footer-links a {
-  color: #9ca3af; /* Muted gray */
+  color: #9ca3af; 
   margin: 0 8px;
   text-decoration: none;
   font-size: 13px;
@@ -25,11 +25,11 @@
 }
 
 .footer-links a:hover {
-  color: #ffffff; /* White on hover */
+  color: #ffffff; 
   text-decoration: underline;
 }
 
-/* 📱 Mobile responsive */
+
 @media (max-width: 600px) {
   .footer-links {
     display: flex;
